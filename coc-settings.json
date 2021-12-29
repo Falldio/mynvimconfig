@@ -44,5 +44,6 @@
     "UltiSnips",
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.config/nvim/plugged/vim-snippet/UltiSnips/"
-  ]
+  ],
+  "python.linting.pylintArgs": ["--generated-members=numpy.* , torch.*"]
 }
