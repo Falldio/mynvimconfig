@@ -75,12 +75,21 @@ noremap <C-h> 0
 " go to the end of the line
 noremap <C-l> $
 
+" clear search result
 noremap <LEADER><CR> :nohlsearch<CR>
+" open init.vim
 nmap <LEADER>rc :tabe<CR>:e $MYVIMRC<CR>
+" save file
 map S :w<CR>
 map s <nop>
+
+" quit vim
 map Q :q<CR>
+
+" reload init.vim
 map R :source $MYVIMRC<CR>
+
+" split screen
 map <LEADER>sl :set splitright<CR>:vsplit<CR>
 map <LEADER>sh :set nosplitright<CR>:vsplit<CR>
 map <LEADER>sj :set nosplitbelow<CR>:split<CR>
@@ -94,15 +103,19 @@ map <LEADER>j <C-w>j
 
 " spell check
 map <LEADER>sc :set spell!<CR>
+
+" window size
 map <up> :res +5<CR>
 map <down> :res -5<CR>
 map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
 
+" open new tab
 map tu :tabe<CR>
 map th :-tabnext<CR>
 map tl :+tabnext<CR>
 
+" switch screen split mode
 map sv <C-w>t<C-w>H
 map sh <C-w>t<C-w>K
 
@@ -118,17 +131,27 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 
+" LSP Config
+Plug 'neovim/nvim-lspconfig'
+
 " Theme
 Plug 'morhetz/gruvbox'
 
 " Snippets
 Plug 'honza/vim-snippets'
+
 " File navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Taglist
 Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
+
+" kotlin syntax highlight
+Plug 'udalov/kotlin-vim'
+
+" Android
+Plug 'hsanson/vim-android'
 
 " Error checking
 Plug 'w0rp/ale'
@@ -211,9 +234,7 @@ let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
-
-nmap <LEADER>mp :MarkdownPreview<CR>
-nmap <LEADER>mpt :MarkdownPreviewToggle<CR>
+nnoremap <LEADER>mp :MarkdownPreview<CR>
 
 " Tagbar
 map <silent> T :TagbarOpenAutoClose<CR>
@@ -224,11 +245,14 @@ map <LEADER>tm :TableModeToggle<CR>
 " Undo Tree
 nnoremap <F1> :UndotreeToggle<CR>
 
-" vim-indent-guid
+" vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indnet_guides_color_change_percent = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
+
+" Android SDK
+let g:android_sdk_path = "~/Android/Sdk/"
 
 " Goyo
 map <LEADER>gy :Goyo<CR>
@@ -236,46 +260,8 @@ map <LEADER>gy :Goyo<CR>
 " quick selection
 nmap <LEADER>s <Plug>(wildfire-quick-select)
 
-" coc-vim
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-marketplace', 'coc-pairs']
-inoremap <silent><expr> <c-q> coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" Use K to show documentation in preview window.
-nnoremap <silent> H :call <SID>show_documentation()<CR>
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-
-imap <C-l> <Plug>(coc-snippets-expand)
-vmap <C-e> <Plug>(coc-snippets-select)
-let g:snips_author = 'Falldio'
-
-
-" compile function
 noremap r :call CompileFunction()<CR>
+
 func! CompileFunction()
   exec "w"
   if &filetype == 'c'
@@ -297,7 +283,7 @@ func! CompileFunction()
     set splitbelow
     :sp
     :res -5
-    term javac % && time java %<
+    :term javac % && time java %<
   elseif &filetype == 'sh'
     :!time bash %
   elseif &filetype == 'python'
@@ -322,6 +308,10 @@ func! CompileFunction()
     set splitbelow
     :sp
     :term go run .
+  elseif &filetype == 'kotlin'
+    set splitbelow
+    :sp
+    :term kotlinc % -include-runtime -d %<.jar && java -jar %<.jar
   endif
 endfunc
 

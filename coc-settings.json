@@ -29,6 +29,8 @@
     "value": "\uf89f",
     "variable": "\ue71b"
   },
+  "suggest.autoTrigger": "always",
+  "suggest.triggerAfterInsertEnter": true,
   "diagnostic.errorSign": "\uf467",
   "diagnostic.warningSign": "\uf071",
   "diagnostic.infoSign": "\uf129",
