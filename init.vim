@@ -54,6 +54,7 @@ set backspace=indent,eol,start
 " fold code block
 set foldmethod=indent
 set foldlevel=99
+" minimum number of lines at bottom and top
 set scrolloff=5
 
 set hidden
@@ -117,7 +118,7 @@ map <LEADER>sh :set nosplitright<CR>:vsplit<CR>
 map <LEADER>sj :set splitbelow<CR>:split<CR>
 map <LEADER>sk :set nosplitbelow<CR>:split<CR>
 
-" duplicate words
+" find duplicate words
 map <LEADER>fd /\(\<\w\+\>\)\_s*\1
 
 " switch window
@@ -129,6 +130,7 @@ map <LEADER>w <C-w>w
 
 " spell check
 map <LEADER>sc :set spell!<CR>
+inoremap <C-x> <ESC>ea<C-x>s
 
 " window size
 map <up> :res +5<CR>
@@ -153,6 +155,9 @@ nnoremap <LEADER>tf :NERDTreeFind<CR>
 map <LEADER>logo :r !figlet
 
 call plug#begin('~/.vim/plugged')
+
+" smart comment
+Plug 'preservim/nerdcommenter'
 
 Plug 'vim-airline/vim-airline'
 
@@ -284,6 +289,19 @@ map <LEADER>gy :Goyo<CR>
 
 " quick selection
 nmap <LEADER>s <Plug>(wildfire-quick-select)
+
+" placeholder
+func! FindNextPlaceHolder()
+  let saved_pos = getcurpos()
+  if(line(".") <= search("<++>", 'cw'))
+    execute "normal! c4l"
+  else
+    call setpos(".", saved_pos)
+  endif
+endfunction
+noremap <LEADER><LEADER> :call FindNextPlaceHolder()<CR>i
+noremap <LEADER>ph i<++><ESC>
+
 
 noremap r :call CompileFunction()<CR>
 

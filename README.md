@@ -25,19 +25,30 @@ __   __    _       _  __     _
 | <kbd>Ctrl</kbd> + <kbd>l</kbd> | move cursor to the last charactor of the line  |
 |  <kbd>g</kbd> + <kbd>g</kbd>   | top of the file                                |
 |          <kbd>G</kbd>          | bottom of the file                             |
+| <kbd>Ctrl</kbd> + <kbd>o</kbd> | move cursor backward, kind of like undo        |
+| <kbd>Ctrl</kbd> + <kbd>i</kbd> | move cursor foreward, kind of like redo        |
 
 # General Commands
-|                   Key                    | Control                                                         |
-|:----------------------------------------:|-----------------------------------------------------------------|
-|               <kbd>o</kbd>               | add a new line below the current line and switch to Insert mode |
-|               <kbd>O</kbd>               | add a new line above the current line and switch to Insert mode |
-|               <kbd>A</kbd>               | append the current line                                         |
-|               <kbd>I</kbd>               | insert at the start of the current line                         |
-|               <kbd>Q</kbd>               | quit NeoVim                                                     |
-|               <kbd>S</kbd>               | save file                                                       |
-|               <kbd>R</kbd>               | reload `init.vim`                                               |
-| <kbd>:</kbd> + <kbd>e</kbd> + `filepath` | open file                                                       |
-|       <kbd>z</kbd> + <kbd>z</kbd>        | set the current line at the center of the screen                |
+|                       Key                       | Control                                                          |
+|:-----------------------------------------------:|------------------------------------------------------------------|
+|                  <kbd>o</kbd>                   | add a new line below the current line and switch to Insert mode  |
+|                  <kbd>O</kbd>                   | add a new line above the current line and switch to Insert mode  |
+|                  <kbd>A</kbd>                   | append the current line                                          |
+|                  <kbd>I</kbd>                   | insert at the start of the current line                          |
+|                  <kbd>Q</kbd>                   | quit NeoVim                                                      |
+|                  <kbd>S</kbd>                   | save file                                                        |
+|                  <kbd>R</kbd>                   | reload `init.vim`                                                |
+|    <kbd>:</kbd> + <kbd>e</kbd> + `filepath`     | open file                                                        |
+|           <kbd>g</kbd> + <kbd>f</kbd>           | open file at the path where cursor is pointing at                |
+|           <kbd>z</kbd> + <kbd>z</kbd>           | set the current line to the center of the screen                 |
+| <kbd>:</kbd> + <kbd>%</kbd> + <kbd>Tohtml</kbd> | export current file as a html file (so you can save it PDF, etc) |
+
+# Spell Check
+|                      Key                       | Control                       |
+|:----------------------------------------------:|-------------------------------|
+| <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>c</kbd> | toggle spell check            |
+|          <kbd>z</kbd> + <kbd>=</kbd>           | open spell correct suggestion |
+|         <kbd>Ctrl</kbd> + <kbd>x</kbd>         | open complete suggestion      |
 
 # File Open Shortcuts
 |                              Key                              | Control                   |
@@ -63,10 +74,17 @@ __   __    _       _  __     _
 |:-----------------------------------------:|----------------------|
 | <kbd>/</kbd> + `query` + <kbd>Enter</kbd> | search something     |
 |    <kbd>Space</kbd> + <kbd>Enter</kbd>    | clear search results |
-|               <kbd>n/<kbd>                | find next result     |
-|               <kbd>N/<kbd>                | find previous result |
+|               <kbd>n</kbd>                | find next result     |
+|               <kbd>N</kbd>                | find previous result |
 
-# Plugins
-+ [`NerdTree`](https://github.com/preservim/nerdtree): A file system explorer
-+ vim-plug
-+ vim-airline
+# Placeholder
+|                      Key                       | Control                                                         |
+|:----------------------------------------------:|-----------------------------------------------------------------|
+|      <kbd>Space</kbd> + <kbd>Space</kbd>       | find the next placeholder, clear it and switch into insert mode |
+| <kbd>Space</kbd> + <kbd>p</kbd> + <kbd>h</kbd> | insert a placeholder at current position                        |
+
+# Comment
+|                      Key                       | Control   |
+|:----------------------------------------------:|-----------|
+| <kbd>Space</kbd> + <kbd>c</kbd> + <kbd>c</kbd> | comment   |
+| <kbd>Space</kbd> + <kbd>c</kbd> + <kbd>u</kbd> | uncomment |
