@@ -4,39 +4,54 @@
 " | |___| | |_| | | |___| | | |  __/ | | | (_| |
 " |_____|_|\__,_|  \____|_| |_|\___|_| |_|\__, |
 "                                         |___/
+"
 
 let mapleader=" "
+" syntax highlight
 syntax on
+" show line number on the left
 set number
 set relativenumber
+" underline current line
 set cursorline
 set wrap
 set showcmd
+" smart completion of vim cmd
 set wildmenu
 
+" highlight search results
 set hlsearch
 exec "nohlsearch"
 set incsearch
+" smart ignore case search
 set ignorecase
 set smartcase
-
+" compatible with vi operations
 set nocompatible
+" identification of different file types
 filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+" enable mouse
 set mouse=a
 set encoding=utf-8
+" correct theme settings
 let &t_ut=''
 set expandtab
+" tab distance
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+" show listchars like tab and space
 set list
 set listchars=tab:►\ ,trail:▫
+" indent
 set tw=0
 set indentexpr=
+" when pressing backspace at the start of the line, move the cursor to the end of the previous line
 set backspace=indent,eol,start
+" fold code block
 set foldmethod=indent
 set foldlevel=99
 set scrolloff=5
@@ -61,7 +76,9 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 set laststatus=2
+" change directory to the current file directory automaticaly
 set autochdir
+" move cursor to the last position when you reopen a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " quick mouse move
@@ -69,6 +86,8 @@ noremap H 5h
 noremap J 5j
 noremap K 5k
 noremap L 5l
+noremap W 10w
+noremap B 10b
 
 " go to the start of the line
 noremap <C-h> 0
@@ -77,8 +96,11 @@ noremap <C-l> $
 
 " clear search result
 noremap <LEADER><CR> :nohlsearch<CR>
+
 " open init.vim
 nmap <LEADER>rc :tabe<CR>:e $MYVIMRC<CR>
+" open .zsh
+nmap <LEADER>zrc :tabe<CR>:e ~/.zshrc<CR>
 " save file
 map S :w<CR>
 map s <nop>
@@ -92,14 +114,18 @@ map R :source $MYVIMRC<CR>
 " split screen
 map <LEADER>sl :set splitright<CR>:vsplit<CR>
 map <LEADER>sh :set nosplitright<CR>:vsplit<CR>
-map <LEADER>sj :set nosplitbelow<CR>:split<CR>
+map <LEADER>sj :set splitbelow<CR>:split<CR>
+map <LEADER>sk :set nosplitbelow<CR>:split<CR>
 
 " duplicate words
 map <LEADER>fd /\(\<\w\+\>\)\_s*\1
+
+" switch window
 map <LEADER>l <C-w>l
 map <LEADER>k <C-w>k
 map <LEADER>h <C-w>h
 map <LEADER>j <C-w>j
+map <LEADER>w <C-w>w
 
 " spell check
 map <LEADER>sc :set spell!<CR>
@@ -120,9 +146,8 @@ map sv <C-w>t<C-w>H
 map sh <C-w>t<C-w>K
 
 " NerdTree
-nnoremap <LEADER>nt :NERDTree<CR>
-nnoremap <LEADER>ntt :NERDTreeToggle<CR>
-nnoremap <LEADER>ntf :NERDTreeFind<CR>
+nnoremap <LEADER>tt :NERDTreeToggle<CR>
+nnoremap <LEADER>tf :NERDTreeFind<CR>
 
 " logo figlet
 map <LEADER>logo :r !figlet
