@@ -1,5 +1,5 @@
 # <center>My NeoVim</center>
-> Yet another `NeoVim` configuration~
+> Yet another [`NeoVim`](https://github.com/neovim/neovim) configuration~
 
 > Basic Vim guidance should be found [here](http://www.oualline.com/vim-cook.html)!
 ```
@@ -12,7 +12,9 @@ __   __    _       _  __     _
 ```
 [TOC]
 
-# Cursor Control (Normal & Visual)
+# Key bindings 
+> This chapter gives a summary of custom key bindings, click [here](./init.vim) for more detailed information.
+## Cursor Control (Normal & Visual)
 |              Key               | Control                                        |
 |:------------------------------:|------------------------------------------------|
 |  <kbd>h</kbd> / <kbd>H</kbd>   | left                                           |
@@ -28,7 +30,7 @@ __   __    _       _  __     _
 | <kbd>Ctrl</kbd> + <kbd>o</kbd> | move cursor backward, kind of like undo        |
 | <kbd>Ctrl</kbd> + <kbd>i</kbd> | move cursor foreward, kind of like redo        |
 
-# General Commands
+## General Commands
 |                       Key                       | Control                                                          |
 |:-----------------------------------------------:|------------------------------------------------------------------|
 |                  <kbd>o</kbd>                   | add a new line below the current line and switch to Insert mode  |
@@ -42,21 +44,24 @@ __   __    _       _  __     _
 |           <kbd>g</kbd> + <kbd>f</kbd>           | open file at the path where cursor is pointing at                |
 |           <kbd>z</kbd> + <kbd>z</kbd>           | set the current line to the center of the screen                 |
 | <kbd>:</kbd> + <kbd>%</kbd> + <kbd>Tohtml</kbd> | export current file as a html file (so you can save it PDF, etc) |
+|       <kbd>Space</kbd> + <kbd>logo</kbd>        | receive a string and coverts it into a digital art work!         |
 
-# Spell Check
+## Spell Check
 |                      Key                       | Control                       |
 |:----------------------------------------------:|-------------------------------|
 | <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>c</kbd> | toggle spell check            |
 |          <kbd>z</kbd> + <kbd>=</kbd>           | open spell correct suggestion |
 |         <kbd>Ctrl</kbd> + <kbd>x</kbd>         | open complete suggestion      |
 
-# File Open Shortcuts
-|                              Key                              | Control                   |
-|:-------------------------------------------------------------:|---------------------------|
-| <kbd>Space</kbd> + <kbd>z</kbd> + <kbd>r</kbd> + <kbd>c</kbd> | open `init.vim` in NeoVim |
-|        <kbd>Space</kbd> + <kbd>r</kbd> + <kbd>c</kbd>         | open `init.vim` in NeoVim |
+## File Open Shortcuts
+|                              Key                              | Control                                              |
+|:-------------------------------------------------------------:|------------------------------------------------------|
+| <kbd>Space</kbd> + <kbd>z</kbd> + <kbd>r</kbd> + <kbd>c</kbd> | open `init.vim` in NeoVim                            |
+|        <kbd>Space</kbd> + <kbd>r</kbd> + <kbd>c</kbd>         | open `init.vim` in NeoVim                            |
+|                <kbd>Space</kbd> + <kbd>f</kbd>                | open `Fuzzy File Finder` to open a file in a new tab |
+|                  <kbd>t</kbd> + <kbd>t</kbd>                  | open `NerdTree` to open a file in a new tab          |
 
-# Screen Split & Tabs
+## Screen Split & Tabs & Buffers
 |                                 Key                                  | Control                                         |
 |:--------------------------------------------------------------------:|-------------------------------------------------|
 |            <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>l</kbd>            | vertical screen split and focus on the right    |
@@ -68,8 +73,10 @@ __   __    _       _  __     _
 |                     <kbd>t</kbd> + <kbd>u</kbd>                      | open a new tab                                  |
 |                     <kbd>t</kbd> + <kbd>h</kbd>                      | go one tab left                                 |
 |                     <kbd>t</kbd> + <kbd>l</kbd>                      | go one tab right                                |
+|                     <kbd>b</kbd> + <kbd>h</kbd>                      | go one buffer left                              |
+|                     <kbd>b</kbd> + <kbd>l</kbd>                      | go one buffer right                             |
 
-# Search
+## Search
 |                    Key                    | Control              |
 |:-----------------------------------------:|----------------------|
 | <kbd>/</kbd> + `query` + <kbd>Enter</kbd> | search something     |
@@ -77,14 +84,41 @@ __   __    _       _  __     _
 |               <kbd>n</kbd>                | find next result     |
 |               <kbd>N</kbd>                | find previous result |
 
-# Placeholder
+## Placeholder
 |                      Key                       | Control                                                         |
 |:----------------------------------------------:|-----------------------------------------------------------------|
 |      <kbd>Space</kbd> + <kbd>Space</kbd>       | find the next placeholder, clear it and switch into insert mode |
 | <kbd>Space</kbd> + <kbd>p</kbd> + <kbd>h</kbd> | insert a placeholder at current position                        |
 
-# Comment
-|                      Key                       | Control   |
-|:----------------------------------------------:|-----------|
-| <kbd>Space</kbd> + <kbd>c</kbd> + <kbd>c</kbd> | comment   |
-| <kbd>Space</kbd> + <kbd>c</kbd> + <kbd>u</kbd> | uncomment |
+## Comment
+|                        Key                         | Control        |
+|:--------------------------------------------------:|----------------|
+|   <kbd>Space</kbd> + <kbd>c</kbd> + <kbd>c</kbd>   | comment        |
+|   <kbd>Space</kbd> + <kbd>c</kbd> + <kbd>u</kbd>   | uncomment      |
+|           <kbd>Ctrl</kbd> + <kbd>c</kbd>           | comment toggle |
+
+## Numbers
+|              Key               | Control         |
+|:------------------------------:|-----------------|
+| <kbd>Ctrl</kbd> + <kbd>a</kbd> | add number by 1 |
+
+# Plugins
+> This chapter includes all plugins used in this NeoVim config.
+
+## UI-relevant
++ [vim-airline](https://github.com/vim-airline/vim-airline): add a nice statusline at the bottom of Vim window.
++ [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes): provide various airline themes, click [here](https://github.com/vim-airline/vim-airline-themes/blob/master/doc/airline-themes.txt) for more options.
++ [gruvbox](https://github.com/morhetz/gruvbox): a beautiful Vim theme!
++ [vim-devicons](https://github.com/ryanoasis/vim-devicons): add fancy icons for Vim ui (NerdTree, airline, statify, etc)
+
+## Function Enhancement
++ [nerdcommenter](https://github.com/preservim/nerdcommenter): enable smart commenting behaviour like most IDEs.
++ [coc-snippets](https://github.com/neoclide/coc-snippets): enable quick code snippets input
++ [vim-snippets](https://github.com/honza/vim-snippets): get snippets
+
+## Just for fun~
++ [vim-FIGlet](https://github.com/fadein/vim-FIGlet): enables figlet input in Vim!
++ [vim-startify](https://github.com/mhinz/vim-startify): display a cute start screen when launching nvim/vim without a specific file path.
+
+## File Navigation
++ [nerdtree](https://github.com/preservim/nerdtree): a file system explorer for Vim.

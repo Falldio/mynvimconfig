@@ -142,14 +142,21 @@ map <right> :vertical resize+5<CR>
 map tu :tabe<CR>
 map th :-tabnext<CR>
 map tl :+tabnext<CR>
+map bh :bprevious<CR>
+map bl :bnext<CR>
 
 " switch screen split mode
 map sv <C-w>t<C-w>H
 map sh <C-w>t<C-w>K
 
 " NerdTree
-nnoremap <LEADER>tt :NERDTreeToggle<CR>
-nnoremap <LEADER>tf :NERDTreeFind<CR>
+nnoremap tt :NERDTreeToggle<CR>
+nnoremap tf :NERDTreeFind<CR>
+
+" Can be enabled or disabled
+let g:webdevicons_enable_nerdtree = 1
+" whether or not to show the nerdtree brackets around flags
+let g:webdevicons_conceal_nerdtree_brackets = 0
 
 " logo figlet
 map <LEADER>logo :r !figlet
@@ -159,13 +166,13 @@ call plug#begin('~/.vim/plugged')
 " smart comment
 Plug 'preservim/nerdcommenter'
 
+" statusline
 Plug 'vim-airline/vim-airline'
-
-" LSP Config
-Plug 'neovim/nvim-lspconfig'
+Plug 'vim-airline/vim-airline-themes'
 
 " Theme
 Plug 'morhetz/gruvbox'
+Plug 'ryanoasis/vim-devicons'
 
 " Snippets
 Plug 'honza/vim-snippets'
@@ -234,12 +241,31 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
 Plug 'fadein/vim-FIGlet'
 
-" Emoji
-Plug 'junegunn/vim-emoji'
+" start screen
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
+" color theme
 color gruvbox
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'base16_gruvbox_dark_hard'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 " markdown preview
 let g:mkdp_auto_start = 0
@@ -358,3 +384,64 @@ func! CompileFunction()
   endif
 endfunc
 
+" Nerd Commenter
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+noremap <C-c> :call nerdcommenter#Comment('n', 'toggle')<CR>
+
+" Code snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" FZF
+nmap <LEADER>f :FZF<CR>
