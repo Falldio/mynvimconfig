@@ -227,6 +227,9 @@ Plug 'fadein/vim-FIGlet'
 " start screen
 Plug 'mhinz/vim-startify'
 
+" auto pair
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 " color theme

@@ -135,6 +135,10 @@ __   __    _       _  __     _
 + [vim-surround](https://github.com/junegunn/goyo.vim): quick change surround symbols!
 + [tabular](https://github.com/godlygeek/tabular): align text easily.
 + [wildfire.vim](https://github.com/gcmt/wildfire.vim): quick select closed text objects!
++ [auto-pair](https://github.com/jiangmiao/auto-pairs): enable auto pair!
++ [coc-marketplace](https://github.com/fannheyward/coc-marketplace): search coc extensions.
++ [coc-highlight](https://github.com/neoclide/coc-highlight): default syntax highlight for coc.nvim.
++ [coc-prettier](https://github.com/neoclide/coc-prettier): a code formatter.
 
 ## Just for fun~
 + [vim-FIGlet](https://github.com/fadein/vim-FIGlet): enables figlet input in Vim!
@@ -151,6 +155,7 @@ __   __    _       _  __     _
 + [indentpython.vim](https://github.com/vim-scripts/indentpython.vim): deal with annoying Python indentation!
 + [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim): preview markdown in a specific web browser.
 + [vimwiki](https://github.com/vimwiki/vimwiki): personal wiki for vim.
++ [coc-pyright](https://github.com/fannheyward/coc-pyright): python linting and auto completion.
 
 ## Git
 + [conflict-marker.vim](https://github.com/rhysd/conflict-marker.vim): visualize git conflicts and jump between them.
@@ -159,5 +164,7 @@ __   __    _       _  __     _
 + [vim-gitignore](https://github.com/gisphm/vim-gitignore): provide highlighting and code snippets for `.gitignore` file.
 
 ## Dependencies
++ [vim-plug](https://github.com/junegunn/vim-plug)
 + [vim-addon-wm-utils](https://github.com/MarcWeber/vim-addon-mw-utils)
 + [vim-textobj-user](https://github.com/kana/vim-textobj-user)
++ [coc-vimlsp](https://github.com/iamcco/coc-vimlsp)
