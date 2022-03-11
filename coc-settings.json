@@ -47,5 +47,11 @@
     "$HOME/.config/nvim/UltiSnips/",
     "$HOME/.config/nvim/plugged/vim-snippet/UltiSnips/"
   ],
-  "python.linting.pylintArgs": ["--generated-members=numpy.* , torch.*"]
+  "python.linting.pylintArgs": ["--generated-members=numpy.* , torch.*"],
+  "languageserver": {
+    "kotlin": {
+      "command": "~/lsp/kotlin/server/bin/kotlin-language-server",
+      "filetypes": ["kotlin"]
+    }
+  }
 }

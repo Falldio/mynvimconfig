@@ -102,6 +102,8 @@ noremap <LEADER><CR> :nohlsearch<CR>
 nmap <LEADER>rc :tabe<CR>:e $MYVIMRC<CR>
 " open .zsh
 nmap <LEADER>zrc :tabe<CR>:e ~/.zshrc<CR>
+" open README
+nmap <LEADER>RM :tabe<CR>:e ./README.md<CR>
 " save file
 map S :w<CR>
 map s <nop>

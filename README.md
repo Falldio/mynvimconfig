@@ -64,6 +64,7 @@ __   __    _       _  __     _
 |        <kbd>Space</kbd> + <kbd>r</kbd> + <kbd>c</kbd>         | open `init.vim` in NeoVim                            |
 |                <kbd>Space</kbd> + <kbd>f</kbd>                | open `Fuzzy File Finder` to open a file in a new tab |
 |                  <kbd>t</kbd> + <kbd>t</kbd>                  | open `NerdTree` to open a file in a new tab          |
+|               <kbd>Space</kbd> + <kbd>RM</kbd>                | open `README.md`                                     |
 
 ## Screen Split & Tabs & Buffers
 |                                 Key                                  | Control                                         |
@@ -150,7 +151,6 @@ __   __    _       _  __     _
 + [tagbar](https://github.com/preservim/tagbar): get an overview of the current code structure.
 
 ## Enhancement for specific languages
-+ [kotlin-vim](https://github.com/udalov/kotlin-vim): syntax highlight for kotlin.
 + [vim-android](https://github.com/hsanson/vim-android): support Gradle based project development.
 + [indentpython.vim](https://github.com/vim-scripts/indentpython.vim): deal with annoying Python indentation!
 + [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim): preview markdown in a specific web browser.
