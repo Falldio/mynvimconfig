@@ -40,9 +40,9 @@ set encoding=utf-8
 let &t_ut=''
 set expandtab
 " tab distance
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 " show listchars like tab and space
 set list
 set listchars=tab:►\ ,trail:▫
