@@ -103,7 +103,7 @@ nmap <LEADER>rc :tabe<CR>:e $MYVIMRC<CR>
 " open .zsh
 nmap <LEADER>zrc :tabe<CR>:e ~/.zshrc<CR>
 " open README
-nmap <LEADER>RM :tabe<CR>:e ./README.md<CR>
+nmap <LEADER>RM :tabe<CR>:e ~/.config/nvim/README.md<CR>
 " save file
 map S :w<CR>
 map s <nop>
@@ -114,16 +114,10 @@ map Q :q<CR>
 " reload init.vim
 map R :source $MYVIMRC<CR>
 
-" split screen
-map <LEADER>sl :set splitright<CR>:vsplit<CR>
-map <LEADER>sh :set nosplitright<CR>:vsplit<CR>
-map <LEADER>sj :set splitbelow<CR>:split<CR>
-map <LEADER>sk :set nosplitbelow<CR>:split<CR>
-
 " find duplicate words
 map <LEADER>fd /\(\<\w\+\>\)\_s*\1
 
-" switch window
+"switch window
 map <LEADER>l <C-w>l
 map <LEADER>k <C-w>k
 map <LEADER>h <C-w>h
@@ -543,3 +537,4 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+nmap <C-q> ggVG<Plug>(coc-format-selected)<C-o>

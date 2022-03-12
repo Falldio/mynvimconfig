@@ -50,12 +50,13 @@ __   __    _       _  __     _
 | <kbd>F1</kbd>                                    | toggle undotree                                                  |
 
 ## Code Reformat
-|                      Key                       | Control                       |
-|:----------------------------------------------:|-------------------------------|
-| <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>c</kbd> | toggle spell check            |
-|          <kbd>z</kbd> + <kbd>=</kbd>           | open spell correct suggestion |
-|         <kbd>Ctrl</kbd> + <kbd>x</kbd>         | open complete suggestion      |
-|      <kbd>:</kbd> + <kbd>Tabularize</kbd>      | align text                    |
+|                      Key                       | Control                         |
+|:----------------------------------------------:|---------------------------------|
+| <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>c</kbd> | toggle spell check              |
+|          <kbd>z</kbd> + <kbd>=</kbd>           | open spell correct suggestion   |
+|         <kbd>Ctrl</kbd> + <kbd>x</kbd>         | open complete suggestion        |
+|      <kbd>:</kbd> + <kbd>Tabularize</kbd>      | align text                      |
+|         <kbd>Ctrl</kbd> + <kbd>q</kbd>         | reformat code of the whole file |
 
 ## File Open Shortcuts
 |                              Key                              | Control                                              |
@@ -67,19 +68,16 @@ __   __    _       _  __     _
 |               <kbd>Space</kbd> + <kbd>RM</kbd>                | open `README.md`                                     |
 
 ## Screen Split & Tabs & Buffers
-|                                 Key                                  | Control                                         |
-|:--------------------------------------------------------------------:|-------------------------------------------------|
-|            <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>l</kbd>            | vertical screen split and focus on the right    |
-|            <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>h</kbd>            | vertical screen split and focus on the left     |
-|            <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>j</kbd>            | horizontal screen split and focus on the bottom |
-|            <kbd>Space</kbd> + <kbd>s</kbd> + <kbd>k</kbd>            | horizontal screen split and focus on the top    |
-|                   <kbd>Space</kbd> + Direction Key                   | switch window                                   |
-| <kbd>Up</kbd> / <kbd>Down</kbd> / <kbd>Left</kbd> / <kbd>Right</kbd> | adjust window size                              |
-|                     <kbd>t</kbd> + <kbd>u</kbd>                      | open a new tab                                  |
-|                     <kbd>t</kbd> + <kbd>h</kbd>                      | go one tab left                                 |
-|                     <kbd>t</kbd> + <kbd>l</kbd>                      | go one tab right                                |
-|                     <kbd>b</kbd> + <kbd>h</kbd>                      | go one buffer left                              |
-|                     <kbd>b</kbd> + <kbd>l</kbd>                      | go one buffer right                             |
+|                                 Key                                  | Control                                |
+|:--------------------------------------------------------------------:|----------------------------------------|
+|     <kbd>Ctrl</kbd> + <kbd>w</kbd> + <kbd>h</kbd> / <kbd>v</kbd>     | split windows horizontaly or verticaly |
+|                   <kbd>Space</kbd> + Direction Key                   | switch window                          |
+| <kbd>Up</kbd> / <kbd>Down</kbd> / <kbd>Left</kbd> / <kbd>Right</kbd> | adjust window size                     |
+|                     <kbd>t</kbd> + <kbd>u</kbd>                      | open a new tab                         |
+|                     <kbd>t</kbd> + <kbd>h</kbd>                      | go one tab left                        |
+|                     <kbd>t</kbd> + <kbd>l</kbd>                      | go one tab right                       |
+|                     <kbd>b</kbd> + <kbd>h</kbd>                      | go one buffer left                     |
+|                     <kbd>b</kbd> + <kbd>l</kbd>                      | go one buffer right                    |
 
 ## Search
 |                    Key                    | Control              |
