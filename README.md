@@ -23,8 +23,6 @@ __   __    _       _  __     _
 |   <kbd>k</kbd> / <kbd>K</kbd>   | up                                             |
 |   <kbd>w</kbd> / <kbd>W</kbd>   | move cursor to the next (10) word              |
 |   <kbd>b</kbd> / <kbd>B</kbd>   | move cursor to the front (10) word             |
-| <kbd>Ctrl</kbd> + <kbd>h</kbd>  | move cursor to the first charactor of the line |
-| <kbd>Ctrl</kbd> + <kbd>l</kbd>  | move cursor to the last charactor of the line  |
 |   <kbd>g</kbd> + <kbd>g</kbd>   | top of the file                                |
 |          <kbd>G</kbd>           | bottom of the file                             |
 | <kbd>Ctrl</kbd> + <kbd>o</kbd>  | move cursor backward, kind of like undo        |

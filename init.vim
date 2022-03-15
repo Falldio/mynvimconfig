@@ -40,9 +40,9 @@ set encoding=utf-8
 let &t_ut=''
 set expandtab
 " tab distance
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 " show listchars like tab and space
 set list
 set listchars=tab:►\ ,trail:▫
@@ -52,8 +52,11 @@ set indentexpr=
 " when pressing backspace at the start of the line, move the cursor to the end of the previous line
 set backspace=indent,eol,start
 " fold code block
-set foldmethod=indent
+" set foldmethod=indent
+" set foldlevel=99
+set foldmethod=syntax
 set foldlevel=99
+set foldnestmax=3
 " minimum number of lines at bottom and top
 set scrolloff=5
 
@@ -89,11 +92,6 @@ noremap K 5k
 noremap L 5l
 noremap W 10w
 noremap B 10b
-
-" go to the start of the line
-noremap <C-h> 0
-" go to the end of the line
-noremap <C-l> $
 
 " clear search result
 noremap <LEADER><CR> :nohlsearch<CR>
