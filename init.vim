@@ -129,8 +129,8 @@ inoremap <C-x> <ESC>ea<C-x>s
 " window size
 map <up> :res +5<CR>
 map <down> :res -5<CR>
-map <left> :vertical resize-5<CR>
-map <right> :vertical resize+5<CR>
+map <right> :vertical resize-5<CR>
+map <left> :vertical resize+5<CR>
 
 " open new tab
 map tu :tabe<CR>
@@ -150,6 +150,9 @@ call plug#begin('~/.vim/plugged')
 
 " smart comment
 Plug 'preservim/nerdcommenter'
+
+" multi-cursor
+Plug 'mg979/vim-visual-multi'
 
 " file navigation
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } |

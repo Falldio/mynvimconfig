@@ -136,6 +136,7 @@ __   __    _       _  __     _
 + [coc-marketplace](https://github.com/fannheyward/coc-marketplace): search coc extensions.
 + [coc-highlight](https://github.com/neoclide/coc-highlight): default syntax highlight for coc.nvim.
 + [coc-prettier](https://github.com/neoclide/coc-prettier): a code formatter.
++ [vim-visual-multi](https://github.com/mg979/vim-visual-multi): enable multi-cursor visual mode!
 
 ## Just for fun~
 + [vim-FIGlet](https://github.com/fadein/vim-FIGlet): enables figlet input in Vim!
