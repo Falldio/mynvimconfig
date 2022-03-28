@@ -60,6 +60,9 @@ set foldnestmax=3
 " minimum number of lines at bottom and top
 set scrolloff=5
 
+" ex mode history
+set history=200
+
 set hidden
 set updatetime=100
 set shortmess+=c
@@ -74,24 +77,11 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" cursor appearance
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
 set laststatus=2
 " change directory to the current file directory automaticaly
 set autochdir
 " move cursor to the last position when you reopen a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" quick mouse move
-noremap H 5h
-noremap J 5j
-noremap K 5k
-noremap L 5l
-noremap W 10w
-noremap B 10b
 
 " clear search result
 noremap <LEADER><CR> :nohlsearch<CR>
@@ -102,15 +92,6 @@ nmap <LEADER>rc :tabe<CR>:e $MYVIMRC<CR>
 nmap <LEADER>zrc :tabe<CR>:e ~/.zshrc<CR>
 " open README
 nmap <LEADER>RM :tabe<CR>:e ~/.config/nvim/README.md<CR>
-" save file
-map S :w<CR>
-map s <nop>
-
-" quit vim
-map Q :q<CR>
-
-" reload init.vim
-map R :source $MYVIMRC<CR>
 
 " find duplicate words
 map <LEADER>fd /\(\<\w\+\>\)\_s*\1
@@ -134,10 +115,15 @@ map <left> :vertical resize+5<CR>
 
 " open new tab
 map tu :tabe<CR>
-map th :-tabnext<CR>
-map tl :+tabnext<CR>
-map bh :bprevious<CR>
-map bl :bnext<CR>
+nnoremap <silent> [t :tabprevious<CR>
+nnoremap <silent> ]t :tabnext<CR>
+nnoremap <silent> [T :tabfirst<CR>
+nnoremap <silent> ]T :tablast<CR>
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
 " switch screen split mode
 map sv <C-w>t<C-w>H
@@ -147,6 +133,9 @@ map sh <C-w>t<C-w>K
 map <LEADER>logo :r !figlet
 
 call plug#begin('~/.vim/plugged')
+
+" switch.vim
+Plug 'AndrewRadev/switch.vim'
 
 " smart comment
 Plug 'preservim/nerdcommenter'
@@ -232,6 +221,8 @@ call plug#end()
 " color theme
 color gruvbox
 
+let g:switch_mapping = "-"
+
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16_gruvbox_dark_hard'
@@ -307,9 +298,6 @@ func! FindNextPlaceHolder()
 endfunction
 noremap <LEADER><LEADER> :call FindNextPlaceHolder()<CR>i
 noremap <LEADER>ph i<++><ESC>
-
-
-noremap r :call CompileFunction()<CR>
 
 func! CompileFunction()
   exec "w"

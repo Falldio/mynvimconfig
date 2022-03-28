@@ -15,30 +15,13 @@ __   __    _       _  __     _
 # Key bindings
 > This chapter gives a summary of custom key bindings, click [here](./init.vim) for more detailed information.
 ## Cursor Control (Normal & Visual)
-|               Key               | Control                                        |
-|:-------------------------------:|------------------------------------------------|
-|   <kbd>h</kbd> / <kbd>H</kbd>   | left                                           |
-|   <kbd>l</kbd> / <kbd>L</kbd>   | right                                          |
-|   <kbd>j</kbd> / <kbd>J</kbd>   | down                                           |
-|   <kbd>k</kbd> / <kbd>K</kbd>   | up                                             |
-|   <kbd>w</kbd> / <kbd>W</kbd>   | move cursor to the next (10) word              |
-|   <kbd>b</kbd> / <kbd>B</kbd>   | move cursor to the front (10) word             |
-|   <kbd>g</kbd> + <kbd>g</kbd>   | top of the file                                |
-|          <kbd>G</kbd>           | bottom of the file                             |
-| <kbd>Ctrl</kbd> + <kbd>o</kbd>  | move cursor backward, kind of like undo        |
-| <kbd>Ctrl</kbd> + <kbd>i</kbd>  | move cursor foreward, kind of like redo        |
-| <kbd>Space</kbd> + <kbd>s</kbd> | quick select text objects                      |
+|               Key               | Control                                 |
+|:-------------------------------:|-----------------------------------------|
+| <kbd>Space</kbd> + <kbd>s</kbd> | quick select text objects               |
 
 ## General Commands
 |                       Key                        | Control                                                          |
 |:------------------------------------------------:|------------------------------------------------------------------|
-|                   <kbd>o</kbd>                   | add a new line below the current line and switch to Insert mode  |
-|                   <kbd>O</kbd>                   | add a new line above the current line and switch to Insert mode  |
-|                   <kbd>A</kbd>                   | append the current line                                          |
-|                   <kbd>I</kbd>                   | insert at the start of the current line                          |
-|                   <kbd>Q</kbd>                   | quit NeoVim                                                      |
-|                   <kbd>S</kbd>                   | save file                                                        |
-|                   <kbd>R</kbd>                   | reload `init.vim`                                                |
 |                   <kbd>T</kbd>                   | open `tagbar` to view code structure                             |
 |     <kbd>:</kbd> + <kbd>e</kbd> + `filepath`     | open file                                                        |
 |           <kbd>g</kbd> + <kbd>f</kbd>            | open file at the path where cursor is pointing at                |
@@ -71,11 +54,6 @@ __   __    _       _  __     _
 |     <kbd>Ctrl</kbd> + <kbd>w</kbd> + <kbd>h</kbd> / <kbd>v</kbd>     | split windows horizontaly or verticaly |
 |                   <kbd>Space</kbd> + Direction Key                   | switch window                          |
 | <kbd>Up</kbd> / <kbd>Down</kbd> / <kbd>Left</kbd> / <kbd>Right</kbd> | adjust window size                     |
-|                     <kbd>t</kbd> + <kbd>u</kbd>                      | open a new tab                         |
-|                     <kbd>t</kbd> + <kbd>h</kbd>                      | go one tab left                        |
-|                     <kbd>t</kbd> + <kbd>l</kbd>                      | go one tab right                       |
-|                     <kbd>b</kbd> + <kbd>h</kbd>                      | go one buffer left                     |
-|                     <kbd>b</kbd> + <kbd>l</kbd>                      | go one buffer right                    |
 
 ## Search
 |                    Key                    | Control              |
